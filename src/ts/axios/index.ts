@@ -5,19 +5,6 @@ import env from "@/js/env"
 
 const authStore = useAuthStore();
 
-const api = axios.create({
-    baseURL: env.VITE_BASE_URL,
-    headers: {
-        "Content-Type": "application/json",
-        "Accept": "application/json"
-    },
-    timeout: 5000
-})
-api.interceptors.request.use(config => {
-    config.headers['Accept-Language'] = vuetify.locale.current.value;
-    config.headers['X-TimeZone'] = Intl.DateTimeFormat().resolvedOptions().timeZone;
-    return config;
-})
 
 const apiPublic = axios.create({
     baseURL: env.VITE_BASE_URL,
@@ -25,9 +12,31 @@ const apiPublic = axios.create({
         "Content-Type": "application/json",
         "Accept": "application/json"
     },
+    paramsSerializer: {
+        indexes: null, // no brackets at all
+    },
     timeout: 5000
 })
+
 apiPublic.interceptors.request.use(config => {
+    config.headers['Accept-Language'] = vuetify.locale.current.value;
+    config.headers['X-TimeZone'] = Intl.DateTimeFormat().resolvedOptions().timeZone;
+    return config;
+})
+
+const api = axios.create({
+    baseURL: env.VITE_BASE_URL,
+    headers: {
+        "Content-Type": "application/json",
+        "Accept": "application/json"
+    },
+    paramsSerializer: {
+        indexes: null, // no brackets at all
+    },
+    timeout: 5000
+})
+
+api.interceptors.request.use(config => {
     config.headers['Accept-Language'] = vuetify.locale.current.value;
     config.headers['X-TimeZone'] = Intl.DateTimeFormat().resolvedOptions().timeZone;
     return config;

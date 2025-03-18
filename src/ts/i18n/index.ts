@@ -96,7 +96,59 @@ const messages = {
                 }
             },
             clients: {
-
+                headers: {
+                    name: "Имя",
+                    email: "Email",
+                    phone: "Телефон"
+                },
+                button:{
+                    create: "Добавить",
+                    modify: "Изменить",
+                    delete: "Удалить",
+                },
+                form: {
+                    create: {
+                        title: "Добавить информацию",
+                        button: {
+                            create: "Добавить"
+                        },
+                        field: {
+                            firstName: "Имя",
+                            lastName: "Фамилия",
+                            patronymic: "Отчество",
+                            email: "Email",
+                            phone: "Телефон",
+                        },
+                        validation: {
+                            firstName: {
+                                required: "введите имя",
+                            },
+                            lastName: {
+                                required: "введите фамилию",
+                                max: "фамилия должна содержать максимум {n} @:plural.symbol",
+                            },
+                            patronymic: {
+                                max: "отчество должно содержать максимум {n} @:plural.symbol",
+                            },
+                            email: {
+                                required: "введите email",
+                                max: "email должен содержать максимум {n} @:plural.symbol",
+                                pattern: "email должен быть в валидном формате",
+                            },
+                            phone: {
+                                required: "введите email",
+                                max: "телефон должен содержать максимум {n} @:plural.symbol",
+                                pattern: "телефон должен быть в валидном формате",
+                            }
+                        }
+                    },
+                    modify: {
+                        title: "Изменить информацию",
+                        button: {
+                            modify: "Изменить"
+                        }
+                    }
+                }
             }
         }
     },
@@ -171,7 +223,59 @@ const messages = {
                 }
             },
             clients: {
-
+                button:{
+                    create: "Add",
+                    modify: "Update",
+                    delete: "Delete",
+                },
+                headers: {
+                    name: "Full name",
+                    email: "Email",
+                    phone: "Phone number"
+                },
+                form: {
+                    create: {
+                        title: "Add info about client",
+                        field: {
+                            firstName: "First Name",
+                            lastName: "Last Name",
+                            patronymic: "Patronymic",
+                            email: "Email",
+                            phone: "Phone",
+                        },
+                        validation: {
+                            firstName: {
+                                required: "first name is required",
+                            },
+                            lastName: {
+                                required: "last name is required",
+                                max: "last name should be at most {n} @:plural.character long",
+                            },
+                            patronymic: {
+                                max: "patronymic should be at most {n} @:plural.character long",
+                            },
+                            email: {
+                                required: "email is required",
+                                max: "email should be at most {n} @:plural.character long",
+                                pattern: "email should be valid email address",
+                            },
+                            phone: {
+                                required: "phone number is required",
+                                max: "phone number should be at most {n} @:plural.character long",
+                                pattern: "phone should be a valid phone number",
+                            }
+                        },
+                        button: {
+                            create: "Add"
+                        }
+                    },
+                    modify: {
+                        title: "Update info about client",
+                        button: {
+                            modify: "Update",
+                        }
+                    }
+                }
             }
         }
     },

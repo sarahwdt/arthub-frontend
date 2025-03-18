@@ -1,12 +1,21 @@
 import {createRouter, createWebHistory} from "vue-router";
 import Login from "@/pages/login/Login.vue";
 import {useAuthStore} from "@/ts/stores/auth";
+import Clients from "@/pages/Clients.vue";
 
 const routes = [
     {
         name: 'login',
         path: '/login',
         component: Login
+    },
+    {
+      name: 'clients',
+      path: '/clients',
+      component: Clients,
+      meta: {
+          authRequired: true,
+      }
     },
     {
         name: 'not-found',

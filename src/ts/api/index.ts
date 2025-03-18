@@ -2,6 +2,7 @@ import {Ref} from "vue";
 import {useNotificationStore} from "@/ts/stores/notification";
 
 const notifications = useNotificationStore();
+
 declare interface ProblemDetails {
     title: string | null;
     status: number;
